@@ -1,0 +1,30 @@
+body{
+    background: #F4F5EF;
+}
+
+
+.card{
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+}
+
+.card-margin {
+    text-align: center;
+}
+
+
+.card-header{
+    text-align: center;
+    font-size: 25px;
+    width: 400px;
+    color: black;
+}
+
+.box_content button{
+    width: 200px;
+    margin-bottom: 30px;
+    background: #7B7F9A;
+    color:white;
+}

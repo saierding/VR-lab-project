@@ -1,0 +1,77 @@
+<link type="text/css"rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://cdn.bootcss.com/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Page</title>
+
+    <!--Fontawesome CDN-->
+    <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link  rel="stylesheet" type="text/css" href="../css/signup.css">
+
+    <script type="text/javascript">
+        function onSubmit(){
+            $.ajax({
+                type: 'POST',
+                url: '/html/signup',
+                data: {name: $("#username").val(), pass: $("#userpassword").val(), type: $('input:Radio:checked').val()},
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded',
+                success: function(data){console.log(data)},
+                error: function(jqXHR){console.log(jqXHR)},
+            })
+        }
+    </script>
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <input onclick="window.location = '../index' " class="btn" value="Go back">
+            <div class="card-header">
+                Sign Up
+            </div>
+            <div class="card-body">
+                <form action="/html/signup" method="post" class="form" id="form" role="form">
+                    <div class="col-xs-6 card-margin">
+                        <input class="form-control" id="username" name="username" placeholder="Please Enter your username" type="username" />
+                    </div>
+
+                    <div class="col-xs-6 card-margin">
+                        <input class="form-control" id="userpassword" name="password" placeholder="Enter password(6-20 characters)" type="password" />
+                    </div>
+
+                    <div class="row">
+                        <label class="radio-inline col-4">
+                            <input type="radio" name="type" id="Researcher" value="1" />
+                            Researcher
+                        </label>
+                        <label class="radio-inline col-4">
+                            <input type="radio" name="type" id="Therapist" value="0" />
+                            Therapist
+                        </label>
+                        <label class="radio-inline col-4">
+                            <input type="radio" name="type" id="Both" value="-1" />
+                            Both
+                        </label>
+                    </div>
+
+                    <br />
+                    <br />
+                    <button type="button" name = "submit" id="button-register" onclick="onSubmit()" class="btn float-right register_btn" >Sign up</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

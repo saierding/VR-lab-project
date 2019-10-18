@@ -1,0 +1,63 @@
+html,body{
+    background: #F4F5EF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 700px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+}
+.card_patient{
+    text-align: center;
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.card-margin{
+    margin-bottom: 18px;
+}
+
+
+.card-header{
+    text-align: center;
+    font-size: 25px;
+    width: 500px;
+    color: black;
+}
+
+
+.register_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.register_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.radio-inline{
+    color: white;
+}
+
+.slider{
+    margin-bottom: 6px;
+}
+
+.preset_box{
+    font-size: 16px;
+}
+.preset_level{
+    margin-bottom: 20px;
+
+}

@@ -1,0 +1,162 @@
+<!--
+This file realize the function of monitoring patients.
+when the patients is in the treatment, the therapist can change the parameters according to patient's condition
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient</title>
+
+
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+
+    <link rel="stylesheet" type="text/css" href="../css/patient.css">
+    <script src="../js/patient.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+    <div class="whole_box">
+        <div class="row">
+            <div class="box_heading">
+            Patient  List
+            </div>
+        </div>
+        <form class="form_container">
+            <div class="row">
+                <form class="form-inline">
+                    <div class="col-1"></div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="patientid" class="sr-only">Patient ID</label>
+                        <input type="text" class="form-control" id="patientid" placeholder="Patient ID">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2" id="searchid">Search</button>
+
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <table class="table table-striped border rounded">
+                        <thead>
+                        <th>
+                            Patient ID
+                        </th>
+                        <th>
+                            Patient name
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Phobia Level
+                        </th>
+                        <th>
+                            Motionsickness Level
+                        </th>
+                        <th>
+                            Select
+                        </th>
+                        </thead>
+                        <form action="/html/patient" method="post"  id="form" role="form">
+                            <tbody id="tbody_patient">
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-5"></div>
+                <ul class="pager">
+                    <li><a id="previous">Previous</a></li>
+                    <li><a id="next">Next</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-9"></div>
+                <button type="button" class="btn btn-success"  id="addnewpatientlist" data-toggle="modal" data-target="#addnewpatient">
+                    Add New Patient
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addnewpatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="addnewpatientTitle">Add New Patient</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form_container">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Patient_ID">Patient ID</label>
+                                <input type="text" class="form-control" id="Patient_ID" placeholder="ID" disabled="disabled" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Patient_name">Patient Name</label>
+                                <input type="text" class="form-control" id="Patient_name" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Patient_ID">Age</label>
+                                <input type="text" class="form-control" id="age" placeholder="Age">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Patient_name">Gender</label>
+                                <input type="text" class="form-control" id="gender" placeholder="Gender">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Phobia_Level">Phobia Level</label>
+                                <input type="text" class="form-control" id="Phobia_Level" placeholder="Phobia Level">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Motionsickness_Level">Motionsickness Level</label>
+                                <input type="text" class="form-control" id="Motionsickness_Level" placeholder="Motionsickness Level">
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary add_patient" data-dismiss="modal" id="button_add">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

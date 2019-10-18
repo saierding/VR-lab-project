@@ -1,0 +1,190 @@
+<!--
+This file realize the function of setting parameters and the preset for different patients
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+
+
+    <link href="../css/setting.css" rel="stylesheet">
+    <script src="../js/setting.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                Settings
+            </div>
+            <div class="card-body">
+                <form action="#" method="post" class="form" id="form" role="form">
+
+                    <div class="slider">
+                        <div class="col-12">
+                            <p>
+                                <label for="duration">Duration:</label>
+                                <input type="text" id="duration" style="border:0;">
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div id="slider-range-duration"></div>
+                        </div>
+                    </div>
+
+                    <div class="slider">
+                        <div class="col-12">
+                            <p>
+                                <label for="distance">Distance:</label>
+                                <input type="text" id="distance" style="border:0;">
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div id="slider-range-distance"></div>
+                        </div>
+                    </div>
+
+                    <div class="slider">
+                        <div class="col-12">
+                            <p>
+                                <label for="speed">Speed:</label>
+                                <input type="text" id="speed" style="border:0;">
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div id="slider-range-speed"></div>
+                        </div>
+                    </div>
+
+                    <div class="slider">
+                        <div class="col-12">
+                            <p>
+                                <label for="spiders">Spiders:</label>
+                                <input type="text" id="spiders" style="border:0;">
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div id="slider-range-spiders"></div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-primary float-left"  data-toggle="modal" data-target="#exampleModalCenter">
+                                Preset
+                            </button>
+                        </div>
+
+                        <div class="col-6">
+                                <button type="button" id="button-start"  class="btn float-right register_btn"  onclick="window.location = '/html/treament' " >Start</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Preset</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-7 preset_box">
+                        Phobia Level
+                    </div>
+                    <div class="col-5 preset_level float-right">
+                        <select id="phobix_select" data-style="btn-primary btn-lg">
+                            <option value="Low">Low</option>
+                            <option value="High">High</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-7 preset_box">
+                        Motion Sickness Level
+                    </div>
+                    <div class="col-5 preset_level float-right">
+                        <select id="motion_sickness_select" data-style="btn-primary btn-lg">
+                            <option value="Low">Low</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary save_parameters" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addnewpatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="addnewpatientTitle">Add New Patient</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="form_container">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Patient_ID">Patient ID</label>
+                            <input type="text" class="form-control" id="Patient_ID" placeholder="ID">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Patient_name">Patient Name</label>
+                            <input type="text" class="form-control" id="Patient_name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">content</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="xxxxx">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary add_patient" data-dismiss="modal">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

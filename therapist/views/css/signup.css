@@ -1,0 +1,48 @@
+html,body{
+    background: #F4F5EF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: #7B7F9A;
+}
+
+.card-margin{
+    margin-bottom: 18px;
+}
+
+
+.card-header{
+    text-align: center;
+    font-size: 25px;
+    width: 400px;
+    color: white;
+}
+
+
+.register_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.register_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.radio-inline{
+    font-size: 15px;
+    color: white;
+}

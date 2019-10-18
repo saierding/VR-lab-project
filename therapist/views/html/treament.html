@@ -1,0 +1,145 @@
+<!--
+This file realize the function of monitoring patients.
+when the patients is in the treatment, the therapist can change the parameters according to patient's condition
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoring</title>
+
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link href="../css/treatment.css" rel="stylesheet">
+    <script src="../js/treatment.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="whole_box">
+        <div class="row first_row">
+            <div class="col-3">
+                <div class="card card_time">
+                    <div class="card-header">
+                        Time Remaining
+                    </div>
+                    <div class="card-body">
+                        <p id="demo"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="button_list">
+
+                    <button type="button" class="btn  btn-lg btn-secondary rounded-circle" id="button_pause">
+                        <i class="fas fa-pause" style="font-size:38px"></i>
+                    </button>
+
+                    <a href="survey.html">
+                    <button type="button" class="btn  btn-lg btn-danger" id="button_stop">
+                        <i class="fas fa-stop"  style="font-size:38px"></i>
+                    </button>
+                    </a>
+
+                    <button type="button" class="btn  btn-lg rounded-circle btn-secondary" id="button_start">
+                        <i class="fas fa-play"  style="font-size:38px"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+                <div class="card card_system_health">
+                    <div class="card-header">
+                        System Health
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="monitoring col-3">
+                <div class="slider">
+                    <div class="col-12">
+                        <p>
+                            <label for="duration">Duration:</label>
+                            <input type="text" id="duration" style="border:0;">
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div id="slider-range-duration"></div>
+                    </div>
+                </div>
+
+                <div class="slider">
+                    <div class="col-12">
+                        <p>
+                            <label for="distance">Distance:</label>
+                            <input type="text" id="distance" style="border:0;">
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div id="slider-range-distance"></div>
+                    </div>
+                </div>
+
+                <div class="slider">
+                    <div class="col-12">
+                        <p>
+                            <label for="speed">Speed:</label>
+                            <input type="text" id="speed" style="border:0;">
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div id="slider-range-speed"></div>
+                    </div>
+                </div>
+
+                <div class="slider">
+                    <div class="col-12">
+                        <p>
+                            <label for="spiders">Spiders:</label>
+                            <input type="text" id="spiders" style="border:0;">
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div id="slider-range-spiders"></div>
+                    </div>
+                </div>
+
+                <div class="slider">
+                    <div class="col-12">
+                        <button type="button" id="button-change"  class="btn change_btn">Change</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-8"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
